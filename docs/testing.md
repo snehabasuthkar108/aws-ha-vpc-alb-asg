@@ -1,15 +1,13 @@
-# Testing and Validation
+# Testing & Validation
 
-## SSH Validation
-- SSH access tested using Bastion Host
-- Private EC2 accessed successfully via Bastion
+## SSH via Bastion
+![SSH](../screenshots/scp-ssh.png)
 
-![SSH Bastion](../screenshots/ssh-bastion.png)
+## Application Output
+![Server1](../screenshots/serveroutput1.png)
+![Server2](../screenshots/serveroutput2.png)
 
-## Application Validation
-- Python HTTP server started on both EC2 instances
-- Application accessed using ALB DNS name
-- Load balancing confirmed by different server responses
+## Result
+Traffic successfully routed:
+User → ALB → Private EC2 (ASG)
 
-![Server 1](../screenshots/app-server-1.png)  
-![Server 2](../screenshots/app-server-2.png)

@@ -1,18 +1,12 @@
 # Security Design
 
 ## Security Groups
+- ALB: HTTP 80 from internet
+- Bastion: SSH 22 from my IP
+- App EC2: Port 8000 from ALB SG, SSH from Bastion SG
 
-### Bastion Host SG
-- Allows SSH (22) from administrator IP only
+## Network ACLs
+- Default NACLs used (stateless)
 
-### Application EC2 SG
-- Allows SSH (22) from Bastion Host SG
-- Allows TCP 8000 only from ALB SG
+![SSH](../screenshots/scp-ssh.png)
 
-### ALB SG
-- Allows HTTP (80) from the internet
-
-## Security Principles
-- No public IPs on private EC2 instances
-- SSH access strictly via Bastion Host
-- Least privilege enforced at network layer
